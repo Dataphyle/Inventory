@@ -81,6 +81,7 @@ def start_up_menu():
     Start up menu to create Kitchen, or Choose Kitchen to view/manipulate.
     '''
     while True:
+        return
         
     
     
@@ -98,8 +99,8 @@ def menu():
         print ("D)\tDisplay Shopping List")
         print ("Q)\tQuit")
         print ()
-    answer = input(str("Enter your choice: ")).upper()
-    if len(answer) == 1 and answer in "ARFLQ": # Input validation for menu
+        answer = input(str("Enter your choice: ")).upper()
+        if len(answer) == 1 and answer in "ARFLQ": # Input validation for menu
           return(answer)
 
 def sub_menu(menu):
@@ -122,7 +123,6 @@ def main():
 #===============================================================================
   
   '''
-  
   kitchen_database = Kitchen() # Initializing house database
   choice = -1 # Placeholder for menu while loop state variable
 
