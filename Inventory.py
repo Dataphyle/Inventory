@@ -26,6 +26,8 @@ List of "Essential Items"
     -for each kitchen, if below a set threshold, items will be added to
     a Grocery list
 
+--------------------------------------------------------------------------------
+                                TODO:
 
 
 --------------------------------------------------------------------------------
@@ -81,7 +83,7 @@ def start_up_menu():
     Start up menu to create Kitchen, or Choose Kitchen to view/manipulate.
     '''
     while True:
-        
+        pass
     
     
     
