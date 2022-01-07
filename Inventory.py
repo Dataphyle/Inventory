@@ -185,7 +185,9 @@ class Kitchen:
 
 
 class food_item:
-    def __init__(self, location, quantity, essential=False):
+    def __init__(self, location, quantity, expiration = -1, essential=False):
         self.location = location
         self.quantity = quantity
+        self.expiration = expiration
         self.essential = essential
+        
