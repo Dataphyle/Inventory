@@ -84,15 +84,19 @@ Add Kitchen -> Asks user for name, then creates Kitchen object with that name.
 def start_up_menu():
     """
     Start up menu to create Kitchen, or Choose Kitchen to view/manipulate.
+    Will detect if a kitchen is already created.
+
+    --TODO
     """
-    while True:
+    return
+
 
 def menu():
     """
     Main User menu for manipulating kitchen inventory
     """
     while True:
-        print("A)\tRemove Items")
+        print("A)\tAdd Items")
         print("R)\tRemove Items")
         print("F)\tFind Items")
         print("L)\tList all Items")
@@ -130,16 +134,15 @@ def main():
     # print out all kitchens, or make sure each kitchen is separated but
     # kept in a database.
 
-    kitchen_database = Kitchen()  # Initializing house database
+    DansKitchen = Kitchen()  # DEV TEST VARIABLE
     choice = -1  # Placeholder for menu while loop state variable
 
     while choice != "Q":  # While user input isn't 'q' or 'Q', keep menu going
         choice = menu()
 
         if choice == "A":  # If user inputs 'a' or 'A', start addHouse fnctn
-            kitchen_database += (
-                food_item()
-            )  # food init runs through food object
+            DansKitchen._addFood()
+            # food init runs through food object
             print()  # creation, then += adds to the database
 
             # Not perfect,
@@ -147,15 +150,11 @@ def main():
         elif (
             choice == "R"
         ):  # if user inputs 'r' or 'R', start remove_food fnctn
-            kitchen_database._remove_from_database()
+            DansKitchen._removeFood()
             print()
 
         elif choice == "F":  # if user inputs 'f' or 'F', start findhouse fnctn
-            result = house_database._findHouse("f")
-            if (
-                not not result
-            ):  # if function doesn't return False/if house found
-                print(result)  # print house object
+            result = DansKitchen._searchFood()
             print()
 
         elif choice == "L":  # if L, print out the house database.
@@ -175,19 +174,29 @@ class Kitchen:
         self.inventory = {}
 
     def _addFood(self):
+        print("Testing the _addFood function")
         return
 
     def _searchFood(self):
+        print("Testing the _searchFood function")
+
         return
 
     def _removeFood(self):
+        print("Testing the _removeFood function")
         return
 
 
 class food_item:
-    def __init__(self, location, quantity, expiration = -1, essential=False):
+    def __init__(self, location, quantity, expiration=-1, essential=False):
         self.location = location
         self.quantity = quantity
         self.expiration = expiration
         self.essential = essential
-        
+
+
+def test():
+    main()
+
+
+test()
